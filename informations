@@ -1,0 +1,602 @@
+let products = [
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/men/tommy-hilfiger-lace-up-leather-ankle-boots-item-18502220.aspx?size=31&storeid=10136",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABADGgJscg&ase=2&sig=AOD64_2OcKD6GVy-QvpLWynqNjMwXpK4DQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BAgBEHI",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAFGgJscg&ase=2&sig=AOD64_3CIp5B76xm9ih4ziQ0Dx04dGsHoQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BAgBEH0",
+    name: "Tropical Reef Flip Flops",
+    price: 24.99,
+    info: "These flip flops feature a colorful tropical reef design and are perfect for a day at the beach."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAHGgJscg&ase=2&sig=AOD64_3xgWdhf6g-LjugTYsb8r3ag3U2Qg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIQB",
+    name: "Underwater Coral Reef",
+    price: 79.99,
+    info: "Add some color and life to your walls with this breathtaking photograph of an underwater coral reef."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAJGgJscg&ase=2&sig=AOD64_2xnXm69Imz3xn2GEeRkIhzVE3VEg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIsB",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABALGgJscg&ase=2&sig=AOD64_2cH5-1Pnfvy7HL9RU3D6mXA4XSJw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEJIB",
+    name: "Green Sea Turtle",
+    price: 69.99,
+    info: "This adorable plush sea turtle is the perfect companion for any ocean lover."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABATGgJscg&ase=2&sig=AOD64_2c1xmHbx_bRagQLsW1v3o4t23mgA&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEK4B",
+    name: "Coral Reef Shower Curtain",
+    price: 29.99,
+    info: "Transform your bathroom into an underwater oasis with this stunning coral reef shower curtain."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAPGgJscg&ase=2&sig=AOD64_2lxocdbbeXYJINVV8zKMu2u7XrGw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEKAB",
+    name: "Reef Surfboard",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, featuring a colorful reef design."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAZGgJscg&ase=2&sig=AOD64_3KEzkzBlLE07ePOT9uoYcJ-KbQDg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEL8B",
+    name: "Coral Reef Earrings",
+    price: 19.99,
+    info: "Add a pop of color to your jewelry collection with these beautiful coral reef earrings."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAbGgJscg&ase=2&sig=AOD64_0Ckc6YPGQGLgbYiuGtUn6GbqyA5Q&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEMoB",
+    name: "Reef Conservation T-Shirt",
+    price: 14.99,
+    info: "Show your support for reef conservation with this stylish and comfortable t-shirt."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAJGgJscg&ase=2&sig=AOD64_0LBrkXqS2vjMZRT7Q8KfYJySRroQ&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQwg96BQgBEIkB",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABALGgJscg&ase=2&sig=AOD64_1uMpa_doDKIpNsdVztntRUAJqKXA&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBEJQB",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAPGgJscg&ase=2&sig=AOD64_2TrzsId9vfCBxtaM1OgnOdYZi0tQ&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBEKIB",
+    name: "Orange Starfish",
+    price: 19.99,
+    info: "Add a touch of the ocean to your decor with this beautiful orange starfish."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAVGgJscg&ase=2&sig=AOD64_16umSbwiJhORrS-89jtIvO_kx6fA&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBELcB",
+    name: "Seashell Collection",
+    price: 29.99,
+    info: "Display your love of the ocean with this stunning collection of seashells."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwi8j6D-3Pf9AhWH6lEKHbVQAYcYABAXGgJ3cw&ase=2&sig=AOD64_3Iz5VFjrvUHYZHN1d2-iA3QeyOUQ&ctype=5&nis=4&adurl&ved=2ahUKEwjbk5b-3Pf9AhXQwSoKHWj5ADMQvhd6BQgBEKEB",
+    name: "Surfboard on the Beach",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, designed for maximum speed and maneuverability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5LjK3Pf9AhVD4dUKHXCsAt4YABAHGgJ3cw&ase=2&sig=AOD64_1Uq5hiyqpdQEXjLMH1D3Pgq5zKKQ&ctype=5&nis=4&adurl&ved=2ahUKEwilw6_K3Pf9AhXJxyoKHahoCFIQvhd6BAgBEFw",
+    name: "Underwater Sea Turtle",
+    price: 79.99,
+    info: "Bring the majesty of the ocean into your home with this stunning photograph of an underwater sea turtle."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABArGgJscg&ase=2&sig=AOD64_1oTVk5OKXJq19cFC2ZCplE0afzgg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIIC",
+    name: "Tropical Fish",
+    price: 39.99,
+    info: "Add some color to your aquarium with this beautiful tropical fish."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAlGgJscg&ase=2&sig=AOD64_3TlkbbvQ8W82eho_6AbqDbfwhMVQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEOkB",
+    name: "Conch Shell",
+    price: 24.99,
+    info: "Add some coastal charm to your home with this beautiful conch shell."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/women/bally-logo-charm-leather-loafers-item-17757457.aspx?size=25&storeid=10503",
+    name: "Ocean Wave Art Print",
+    price: 14.99,
+    info: "Bring the power and beauty of the ocean into your home with this stunning art print."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5LjK3Pf9AhVD4dUKHXCsAt4YABARGgJ3cw&ase=2&sig=AOD64_1OdE9DZh6sYAsUR5OGpf463sXr8w&ctype=5&nis=4&adurl&ved=2ahUKEwilw6_K3Pf9AhXJxyoKHahoCFIQvhd6BAgBEH8",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/men/tommy-hilfiger-lace-up-leather-ankle-boots-item-18502220.aspx?size=31&storeid=10136",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABADGgJscg&ase=2&sig=AOD64_2OcKD6GVy-QvpLWynqNjMwXpK4DQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BAgBEHI",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAFGgJscg&ase=2&sig=AOD64_3CIp5B76xm9ih4ziQ0Dx04dGsHoQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BAgBEH0",
+    name: "Tropical Reef Flip Flops",
+    price: 24.99,
+    info: "These flip flops feature a colorful tropical reef design and are perfect for a day at the beach."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAHGgJscg&ase=2&sig=AOD64_3xgWdhf6g-LjugTYsb8r3ag3U2Qg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIQB",
+    name: "Underwater Coral Reef",
+    price: 79.99,
+    info: "Add some color and life to your walls with this breathtaking photograph of an underwater coral reef."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAJGgJscg&ase=2&sig=AOD64_2xnXm69Imz3xn2GEeRkIhzVE3VEg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIsB",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABALGgJscg&ase=2&sig=AOD64_2cH5-1Pnfvy7HL9RU3D6mXA4XSJw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEJIB",
+    name: "Green Sea Turtle",
+    price: 69.99,
+    info: "This adorable plush sea turtle is the perfect companion for any ocean lover."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABATGgJscg&ase=2&sig=AOD64_2c1xmHbx_bRagQLsW1v3o4t23mgA&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEK4B",
+    name: "Coral Reef Shower Curtain",
+    price: 29.99,
+    info: "Transform your bathroom into an underwater oasis with this stunning coral reef shower curtain."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAPGgJscg&ase=2&sig=AOD64_2lxocdbbeXYJINVV8zKMu2u7XrGw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEKAB",
+    name: "Reef Surfboard",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, featuring a colorful reef design."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAZGgJscg&ase=2&sig=AOD64_3KEzkzBlLE07ePOT9uoYcJ-KbQDg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEL8B",
+    name: "Coral Reef Earrings",
+    price: 19.99,
+    info: "Add a pop of color to your jewelry collection with these beautiful coral reef earrings."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAbGgJscg&ase=2&sig=AOD64_0Ckc6YPGQGLgbYiuGtUn6GbqyA5Q&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEMoB",
+    name: "Reef Conservation T-Shirt",
+    price: 14.99,
+    info: "Show your support for reef conservation with this stylish and comfortable t-shirt."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAJGgJscg&ase=2&sig=AOD64_0LBrkXqS2vjMZRT7Q8KfYJySRroQ&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQwg96BQgBEIkB",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABALGgJscg&ase=2&sig=AOD64_1uMpa_doDKIpNsdVztntRUAJqKXA&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBEJQB",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAPGgJscg&ase=2&sig=AOD64_2TrzsId9vfCBxtaM1OgnOdYZi0tQ&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBEKIB",
+    name: "Orange Starfish",
+    price: 19.99,
+    info: "Add a touch of the ocean to your decor with this beautiful orange starfish."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAVGgJscg&ase=2&sig=AOD64_16umSbwiJhORrS-89jtIvO_kx6fA&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBELcB",
+    name: "Seashell Collection",
+    price: 29.99,
+    info: "Display your love of the ocean with this stunning collection of seashells."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwi8j6D-3Pf9AhWH6lEKHbVQAYcYABAXGgJ3cw&ase=2&sig=AOD64_3Iz5VFjrvUHYZHN1d2-iA3QeyOUQ&ctype=5&nis=4&adurl&ved=2ahUKEwjbk5b-3Pf9AhXQwSoKHWj5ADMQvhd6BQgBEKEB",
+    name: "Surfboard on the Beach",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, designed for maximum speed and maneuverability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5LjK3Pf9AhVD4dUKHXCsAt4YABAHGgJ3cw&ase=2&sig=AOD64_1Uq5hiyqpdQEXjLMH1D3Pgq5zKKQ&ctype=5&nis=4&adurl&ved=2ahUKEwilw6_K3Pf9AhXJxyoKHahoCFIQvhd6BAgBEFw",
+    name: "Underwater Sea Turtle",
+    price: 79.99,
+    info: "Bring the majesty of the ocean into your home with this stunning photograph of an underwater sea turtle."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABArGgJscg&ase=2&sig=AOD64_1oTVk5OKXJq19cFC2ZCplE0afzgg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIIC",
+    name: "Tropical Fish",
+    price: 39.99,
+    info: "Add some color to your aquarium with this beautiful tropical fish."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAlGgJscg&ase=2&sig=AOD64_3TlkbbvQ8W82eho_6AbqDbfwhMVQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEOkB",
+    name: "Conch Shell",
+    price: 24.99,
+    info: "Add some coastal charm to your home with this beautiful conch shell."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/women/bally-logo-charm-leather-loafers-item-17757457.aspx?size=25&storeid=10503",
+    name: "Ocean Wave Art Print",
+    price: 14.99,
+    info: "Bring the power and beauty of the ocean into your home with this stunning art print."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5LjK3Pf9AhVD4dUKHXCsAt4YABARGgJ3cw&ase=2&sig=AOD64_1OdE9DZh6sYAsUR5OGpf463sXr8w&ctype=5&nis=4&adurl&ved=2ahUKEwilw6_K3Pf9AhXJxyoKHahoCFIQvhd6BAgBEH8",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/men/tommy-hilfiger-lace-up-leather-ankle-boots-item-18502220.aspx?size=31&storeid=10136",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABADGgJscg&ase=2&sig=AOD64_2OcKD6GVy-QvpLWynqNjMwXpK4DQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BAgBEHI",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAFGgJscg&ase=2&sig=AOD64_3CIp5B76xm9ih4ziQ0Dx04dGsHoQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BAgBEH0",
+    name: "Tropical Reef Flip Flops",
+    price: 24.99,
+    info: "These flip flops feature a colorful tropical reef design and are perfect for a day at the beach."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAHGgJscg&ase=2&sig=AOD64_3xgWdhf6g-LjugTYsb8r3ag3U2Qg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIQB",
+    name: "Underwater Coral Reef",
+    price: 79.99,
+    info: "Add some color and life to your walls with this breathtaking photograph of an underwater coral reef."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAJGgJscg&ase=2&sig=AOD64_2xnXm69Imz3xn2GEeRkIhzVE3VEg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIsB",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABALGgJscg&ase=2&sig=AOD64_2cH5-1Pnfvy7HL9RU3D6mXA4XSJw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEJIB",
+    name: "Green Sea Turtle",
+    price: 69.99,
+    info: "This adorable plush sea turtle is the perfect companion for any ocean lover."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABATGgJscg&ase=2&sig=AOD64_2c1xmHbx_bRagQLsW1v3o4t23mgA&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEK4B",
+    name: "Coral Reef Shower Curtain",
+    price: 29.99,
+    info: "Transform your bathroom into an underwater oasis with this stunning coral reef shower curtain."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAPGgJscg&ase=2&sig=AOD64_2lxocdbbeXYJINVV8zKMu2u7XrGw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEKAB",
+    name: "Reef Surfboard",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, featuring a colorful reef design."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAZGgJscg&ase=2&sig=AOD64_3KEzkzBlLE07ePOT9uoYcJ-KbQDg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEL8B",
+    name: "Coral Reef Earrings",
+    price: 19.99,
+    info: "Add a pop of color to your jewelry collection with these beautiful coral reef earrings."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAbGgJscg&ase=2&sig=AOD64_0Ckc6YPGQGLgbYiuGtUn6GbqyA5Q&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEMoB",
+    name: "Reef Conservation T-Shirt",
+    price: 14.99,
+    info: "Show your support for reef conservation with this stylish and comfortable t-shirt."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/men/tommy-hilfiger-lace-up-leather-ankle-boots-item-18502220.aspx?size=31&storeid=10136",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABADGgJscg&ase=2&sig=AOD64_2OcKD6GVy-QvpLWynqNjMwXpK4DQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BAgBEHI",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAFGgJscg&ase=2&sig=AOD64_3CIp5B76xm9ih4ziQ0Dx04dGsHoQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BAgBEH0",
+    name: "Tropical Reef Flip Flops",
+    price: 24.99,
+    info: "These flip flops feature a colorful tropical reef design and are perfect for a day at the beach."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAHGgJscg&ase=2&sig=AOD64_3xgWdhf6g-LjugTYsb8r3ag3U2Qg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIQB",
+    name: "Underwater Coral Reef",
+    price: 79.99,
+    info: "Add some color and life to your walls with this breathtaking photograph of an underwater coral reef."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAJGgJscg&ase=2&sig=AOD64_2xnXm69Imz3xn2GEeRkIhzVE3VEg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIsB",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABALGgJscg&ase=2&sig=AOD64_2cH5-1Pnfvy7HL9RU3D6mXA4XSJw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEJIB",
+    name: "Green Sea Turtle",
+    price: 69.99,
+    info: "This adorable plush sea turtle is the perfect companion for any ocean lover."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABATGgJscg&ase=2&sig=AOD64_2c1xmHbx_bRagQLsW1v3o4t23mgA&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEK4B",
+    name: "Coral Reef Shower Curtain",
+    price: 29.99,
+    info: "Transform your bathroom into an underwater oasis with this stunning coral reef shower curtain."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAPGgJscg&ase=2&sig=AOD64_2lxocdbbeXYJINVV8zKMu2u7XrGw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEKAB",
+    name: "Reef Surfboard",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, featuring a colorful reef design."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAZGgJscg&ase=2&sig=AOD64_3KEzkzBlLE07ePOT9uoYcJ-KbQDg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEL8B",
+    name: "Coral Reef Earrings",
+    price: 19.99,
+    info: "Add a pop of color to your jewelry collection with these beautiful coral reef earrings."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAbGgJscg&ase=2&sig=AOD64_0Ckc6YPGQGLgbYiuGtUn6GbqyA5Q&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEMoB",
+    name: "Reef Conservation T-Shirt",
+    price: 14.99,
+    info: "Show your support for reef conservation with this stylish and comfortable t-shirt."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAJGgJscg&ase=2&sig=AOD64_0LBrkXqS2vjMZRT7Q8KfYJySRroQ&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQwg96BQgBEIkB",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABALGgJscg&ase=2&sig=AOD64_1uMpa_doDKIpNsdVztntRUAJqKXA&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBEJQB",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAPGgJscg&ase=2&sig=AOD64_2TrzsId9vfCBxtaM1OgnOdYZi0tQ&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBEKIB",
+    name: "Orange Starfish",
+    price: 19.99,
+    info: "Add a touch of the ocean to your decor with this beautiful orange starfish."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAVGgJscg&ase=2&sig=AOD64_16umSbwiJhORrS-89jtIvO_kx6fA&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBELcB",
+    name: "Seashell Collection",
+    price: 29.99,
+    info: "Display your love of the ocean with this stunning collection of seashells."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwi8j6D-3Pf9AhWH6lEKHbVQAYcYABAXGgJ3cw&ase=2&sig=AOD64_3Iz5VFjrvUHYZHN1d2-iA3QeyOUQ&ctype=5&nis=4&adurl&ved=2ahUKEwjbk5b-3Pf9AhXQwSoKHWj5ADMQvhd6BQgBEKEB",
+    name: "Surfboard on the Beach",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, designed for maximum speed and maneuverability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5LjK3Pf9AhVD4dUKHXCsAt4YABAHGgJ3cw&ase=2&sig=AOD64_1Uq5hiyqpdQEXjLMH1D3Pgq5zKKQ&ctype=5&nis=4&adurl&ved=2ahUKEwilw6_K3Pf9AhXJxyoKHahoCFIQvhd6BAgBEFw",
+    name: "Underwater Sea Turtle",
+    price: 79.99,
+    info: "Bring the majesty of the ocean into your home with this stunning photograph of an underwater sea turtle."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABArGgJscg&ase=2&sig=AOD64_1oTVk5OKXJq19cFC2ZCplE0afzgg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIIC",
+    name: "Tropical Fish",
+    price: 39.99,
+    info: "Add some color to your aquarium with this beautiful tropical fish."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAlGgJscg&ase=2&sig=AOD64_3TlkbbvQ8W82eho_6AbqDbfwhMVQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEOkB",
+    name: "Conch Shell",
+    price: 24.99,
+    info: "Add some coastal charm to your home with this beautiful conch shell."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/women/bally-logo-charm-leather-loafers-item-17757457.aspx?size=25&storeid=10503",
+    name: "Ocean Wave Art Print",
+    price: 14.99,
+    info: "Bring the power and beauty of the ocean into your home with this stunning art print."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5LjK3Pf9AhVD4dUKHXCsAt4YABARGgJ3cw&ase=2&sig=AOD64_1OdE9DZh6sYAsUR5OGpf463sXr8w&ctype=5&nis=4&adurl&ved=2ahUKEwilw6_K3Pf9AhXJxyoKHahoCFIQvhd6BAgBEH8",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/men/tommy-hilfiger-lace-up-leather-ankle-boots-item-18502220.aspx?size=31&storeid=10136",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABADGgJscg&ase=2&sig=AOD64_2OcKD6GVy-QvpLWynqNjMwXpK4DQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BAgBEHI",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAFGgJscg&ase=2&sig=AOD64_3CIp5B76xm9ih4ziQ0Dx04dGsHoQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BAgBEH0",
+    name: "Tropical Reef Flip Flops",
+    price: 24.99,
+    info: "These flip flops feature a colorful tropical reef design and are perfect for a day at the beach."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAHGgJscg&ase=2&sig=AOD64_3xgWdhf6g-LjugTYsb8r3ag3U2Qg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIQB",
+    name: "Underwater Coral Reef",
+    price: 79.99,
+    info: "Add some color and life to your walls with this breathtaking photograph of an underwater coral reef."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAJGgJscg&ase=2&sig=AOD64_2xnXm69Imz3xn2GEeRkIhzVE3VEg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIsB",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABALGgJscg&ase=2&sig=AOD64_2cH5-1Pnfvy7HL9RU3D6mXA4XSJw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEJIB",
+    name: "Green Sea Turtle",
+    price: 69.99,
+    info: "This adorable plush sea turtle is the perfect companion for any ocean lover."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABATGgJscg&ase=2&sig=AOD64_2c1xmHbx_bRagQLsW1v3o4t23mgA&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEK4B",
+    name: "Coral Reef Shower Curtain",
+    price: 29.99,
+    info: "Transform your bathroom into an underwater oasis with this stunning coral reef shower curtain."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAPGgJscg&ase=2&sig=AOD64_2lxocdbbeXYJINVV8zKMu2u7XrGw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEKAB",
+    name: "Reef Surfboard",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, featuring a colorful reef design."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAZGgJscg&ase=2&sig=AOD64_3KEzkzBlLE07ePOT9uoYcJ-KbQDg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEL8B",
+    name: "Coral Reef Earrings",
+    price: 19.99,
+    info: "Add a pop of color to your jewelry collection with these beautiful coral reef earrings."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAbGgJscg&ase=2&sig=AOD64_0Ckc6YPGQGLgbYiuGtUn6GbqyA5Q&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEMoB",
+    name: "Reef Conservation T-Shirt",
+    price: 14.99,
+    info: "Show your support for reef conservation with this stylish and comfortable t-shirt."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAJGgJscg&ase=2&sig=AOD64_0LBrkXqS2vjMZRT7Q8KfYJySRroQ&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQwg96BQgBEIkB",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABALGgJscg&ase=2&sig=AOD64_1uMpa_doDKIpNsdVztntRUAJqKXA&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBEJQB",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAPGgJscg&ase=2&sig=AOD64_2TrzsId9vfCBxtaM1OgnOdYZi0tQ&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBEKIB",
+    name: "Orange Starfish",
+    price: 19.99,
+    info: "Add a touch of the ocean to your decor with this beautiful orange starfish."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwjs1em-2_f9AhVZRZEFHfJxCRAYABAVGgJscg&ase=2&sig=AOD64_16umSbwiJhORrS-89jtIvO_kx6fA&ctype=5&nis=4&adurl&ved=2ahUKEwjTxuG-2_f9AhXQwCoKHegKCTUQvhd6BQgBELcB",
+    name: "Seashell Collection",
+    price: 29.99,
+    info: "Display your love of the ocean with this stunning collection of seashells."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwi8j6D-3Pf9AhWH6lEKHbVQAYcYABAXGgJ3cw&ase=2&sig=AOD64_3Iz5VFjrvUHYZHN1d2-iA3QeyOUQ&ctype=5&nis=4&adurl&ved=2ahUKEwjbk5b-3Pf9AhXQwSoKHWj5ADMQvhd6BQgBEKEB",
+    name: "Surfboard on the Beach",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, designed for maximum speed and maneuverability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5LjK3Pf9AhVD4dUKHXCsAt4YABAHGgJ3cw&ase=2&sig=AOD64_1Uq5hiyqpdQEXjLMH1D3Pgq5zKKQ&ctype=5&nis=4&adurl&ved=2ahUKEwilw6_K3Pf9AhXJxyoKHahoCFIQvhd6BAgBEFw",
+    name: "Underwater Sea Turtle",
+    price: 79.99,
+    info: "Bring the majesty of the ocean into your home with this stunning photograph of an underwater sea turtle."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABArGgJscg&ase=2&sig=AOD64_1oTVk5OKXJq19cFC2ZCplE0afzgg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIIC",
+    name: "Tropical Fish",
+    price: 39.99,
+    info: "Add some color to your aquarium with this beautiful tropical fish."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAlGgJscg&ase=2&sig=AOD64_3TlkbbvQ8W82eho_6AbqDbfwhMVQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEOkB",
+    name: "Conch Shell",
+    price: 24.99,
+    info: "Add some coastal charm to your home with this beautiful conch shell."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/women/bally-logo-charm-leather-loafers-item-17757457.aspx?size=25&storeid=10503",
+    name: "Ocean Wave Art Print",
+    price: 14.99,
+    info: "Bring the power and beauty of the ocean into your home with this stunning art print."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5LjK3Pf9AhVD4dUKHXCsAt4YABARGgJ3cw&ase=2&sig=AOD64_1OdE9DZh6sYAsUR5OGpf463sXr8w&ctype=5&nis=4&adurl&ved=2ahUKEwilw6_K3Pf9AhXJxyoKHahoCFIQvhd6BAgBEH8",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.farfetch.com/uz/shopping/men/tommy-hilfiger-lace-up-leather-ankle-boots-item-18502220.aspx?size=31&storeid=10136",
+    name: "Blue and Yellow Reef Fish",
+    price: 49.99,
+    info: "This beautiful reef fish is a great addition to any aquarium."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABADGgJscg&ase=2&sig=AOD64_2OcKD6GVy-QvpLWynqNjMwXpK4DQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BAgBEHI",
+    name: "Sunset Over Coral Reef",
+    price: 99.99,
+    info: "Bring the beauty of the ocean into your home with this stunning photograph of a coral reef at sunset."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAFGgJscg&ase=2&sig=AOD64_3CIp5B76xm9ih4ziQ0Dx04dGsHoQ&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BAgBEH0",
+    name: "Tropical Reef Flip Flops",
+    price: 24.99,
+    info: "These flip flops feature a colorful tropical reef design and are perfect for a day at the beach."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAHGgJscg&ase=2&sig=AOD64_3xgWdhf6g-LjugTYsb8r3ag3U2Qg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIQB",
+    name: "Underwater Coral Reef",
+    price: 79.99,
+    info: "Add some color and life to your walls with this breathtaking photograph of an underwater coral reef."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAJGgJscg&ase=2&sig=AOD64_2xnXm69Imz3xn2GEeRkIhzVE3VEg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEIsB",
+    name: "Reef Snorkeling Gear",
+    price: 149.99,
+    info: "Get ready to explore the underwater world with this high-quality snorkeling gear, designed for maximum comfort and durability."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABALGgJscg&ase=2&sig=AOD64_2cH5-1Pnfvy7HL9RU3D6mXA4XSJw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEJIB",
+    name: "Green Sea Turtle",
+    price: 69.99,
+    info: "This adorable plush sea turtle is the perfect companion for any ocean lover."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABATGgJscg&ase=2&sig=AOD64_2c1xmHbx_bRagQLsW1v3o4t23mgA&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEK4B",
+    name: "Coral Reef Shower Curtain",
+    price: 29.99,
+    info: "Transform your bathroom into an underwater oasis with this stunning coral reef shower curtain."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAPGgJscg&ase=2&sig=AOD64_2lxocdbbeXYJINVV8zKMu2u7XrGw&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEKAB",
+    name: "Reef Surfboard",
+    price: 399.99,
+    info: "Catch some waves in style with this high-performance surfboard, featuring a colorful reef design."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAZGgJscg&ase=2&sig=AOD64_3KEzkzBlLE07ePOT9uoYcJ-KbQDg&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qwg96BQgBEL8B",
+    name: "Coral Reef Earrings",
+    price: 19.99,
+    info: "Add a pop of color to your jewelry collection with these beautiful coral reef earrings."
+  },
+  {
+    imageUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiw5M-y2vf9AhWpRJEFHd-6DT0YABAbGgJscg&ase=2&sig=AOD64_0Ckc6YPGQGLgbYiuGtUn6GbqyA5Q&ctype=5&nis=4&adurl&ved=2ahUKEwiyssey2vf9AhXVsioKHc5fCN0Qvhd6BQgBEMoB",
+    name: "Reef Conservation T-Shirt",
+    price: 14.99,
+    info: "Show your support for reef conservation with this stylish and comfortable t-shirt."
+  }
+];
